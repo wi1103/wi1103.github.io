@@ -31,15 +31,30 @@ html,body{ width:100%; height:100%; margin: auto; padding:0; text-align:center; 
     margin: 45% 3%;
     box-shadow: 12px 0 0 #FFF, -12px 0 0 #FFF;
 }
-.box:hover{
-  background-image: url(http://a0.att.hudong.com/61/36/01200000194917136323362702423.jpg);
-    width: 200px;
-    height: 200px;
-  background-position: 50% 50%;
-    background-size: 100% auto;
-  background-repeat: no-repeat;
+#cf{
+ position:relative;
+  height:200px;
+  width:200px;
+  margin:0 auto;
 }
+
+#cf img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+#cf img.top:hover {
+  opacity:0;
+}
+
 .box:hover:before{
     background-color: rgba(0,0,0,0);
     box-shadow: none;
+}
+.box:hover{
+    background-image: none;
 }
