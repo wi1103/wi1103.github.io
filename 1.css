@@ -1,0 +1,45 @@
+html,body{ width:100%; height:100%; margin: auto; padding:0; text-align:center; background-color:#FFF;}
+.box{
+    width: 200px;
+    height: 200px;
+    display:inline-block;
+    margin:20px;
+    position: relative;
+    border: 6px solid #ccc;
+    border-radius: 50%;
+    background-image: -moz-radial-gradient(40% 40%,circle,rgba(0,0,0,.1) 40%,rgba(0,0,0,1) 100%), -moz-linear-gradient(-90deg, #f33 45%, #333 45%, #3f3f3f 50%, #333 55%, #FFF 55%);
+    background-image: -webkit-radial-gradient(40% 40%,circle,rgba(0,0,0,.1) 40%,rgba(0,0,0,1) 100%),-webkit-linear-gradient(-90deg, #f33 45%, #333 45%, #3f3f3f 50%, #333 55%, #FFF 55%);
+}
+.box:before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20%; 
+    height: 20%;
+    background-color: #FFF;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #AAA, 0 0 0 10px #fff, 0 0 0 16px #3f3f3f;
+    margin: 40%;
+}
+.box:after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 94%;
+    height: 10%;
+    background-color:rgba(0,0,0,0);
+    margin: 45% 3%;
+    box-shadow: 12px 0 0 #FFF, -12px 0 0 #FFF;
+}
+.box:hover{
+  background-image: url(http://a0.att.hudong.com/61/36/01200000194917136323362702423.jpg);
+    width: 200px;
+    height: 200px;
+  background-position: 50% 50%;
+    background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+.box:hover:before{
+    background-color: rgba(0,0,0,0);
+    box-shadow: none;
+}
