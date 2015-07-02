@@ -2,10 +2,38 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css"	href="1.css">
-<title>CSS3 pokemon ball</title>
+<script language="javascript">
+<!--
+	Img = new Array("http://a0.att.hudong.com/61/36/01200000194917136323362702423.jpg","http://a.blog.xuite.net/a/2/2/9/25442311/blog_2422899/txt/43674307/7.jpg","http://p1-news.yamedia.tw/MTA3MzAzMG5ld3M=/53651d6a95508749.jpg","http://yinglong.org/forum/uploader/files/i_1099_5308188860f5d.png");
+	size = Img.length;
+	i = 0;
+	function chImg(){
+		picID.src = Img[i];
+		i++;
+		if (i>=size) i = 0;
+		setTimeout("chImg()",2000);
+	}
+//-->
+</script>
 </head>
 
-<body>
+<body onLoad="chImg()">
+
+
 <div class="box"></div>
+
+
+<center>
+<img id="picID">
+</center>
+
+
 </body>
 </html>
+
+<!--
+	LoadB_Imgs(0,"http://a0.att.hudong.com/61/36/01200000194917136323362702423.jpg");
+	LoadB_Imgs(1,"http://a.blog.xuite.net/a/2/2/9/25442311/blog_2422899/txt/43674307/7.jpg");
+	LoadB_Imgs(2,"http://p1-news.yamedia.tw/MTA3MzAzMG5ld3M=/53651d6a95508749.jpg");
+	LoadB_Imgs(3,"http://yinglong.org/forum/uploader/files/i_1099_5308188860f5d.png");
+-->
