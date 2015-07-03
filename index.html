@@ -1,8 +1,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script language="javascript">
 <!--
+<script language="javascript">
+
 	Img = new Array("http://a0.att.hudong.com/61/36/01200000194917136323362702423.jpg","http://a.blog.xuite.net/a/2/2/9/25442311/blog_2422899/txt/43674307/7.jpg","http://p1-news.yamedia.tw/MTA3MzAzMG5ld3M=/53651d6a95508749.jpg","http://yinglong.org/forum/uploader/files/i_1099_5308188860f5d.png");
 	size = Img.length;
 	var maxNum = size-1;  
@@ -17,14 +18,31 @@
 	{
 		document.getElementById("picID").src ="http://attachment.van698.com/forum/201308/30/1027217oxetdtrarqir9i0.png";
 	}
+</script>
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	Img = new Array("http://a0.att.hudong.com/61/36/01200000194917136323362702423.jpg","http://www.niusnews.com/upload/imgs/default/12JunN/picar/10.jpg","http://www.top-insight.com/userfiles/20120118105420.jpg","http://family.shogakukan.co.jp/gakuyou_cover/kongetugou/img/201306/p003.gif");
+	size = Img.length;
+	var maxNum = size-1;  
+	var minNum = 0;
 
-//-->
+    $("#picID").mouseenter(function(){
+    	var n = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;  
+		document.getElementById("picID").src =Img[n];
+    });
+
+    $("#picID").mouseleave(function(){
+        document.getElementById("picID").src ="http://attachment.van698.com/forum/201308/30/1027217oxetdtrarqir9i0.png";
+    });
+});
 </script>
 </head>
 
 <body>
 <center>
-<img id="picID" onmouseover="mouseOver()" onmouseout="mouseOut()" width="200"; height="200"; src="http://attachment.van698.com/forum/201308/30/1027217oxetdtrarqir9i0.png">
+<img id="picID" width="200"; height="200"; src="http://attachment.van698.com/forum/201308/30/1027217oxetdtrarqir9i0.png">
 </center>
 
 
