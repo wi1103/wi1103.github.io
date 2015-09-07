@@ -52,28 +52,28 @@
         head.removeChild(script);
       }
 
-      function create() {
+      
+        });
+
+    }(document, jQuery));
+
+function create() {
             var name = document.getElementById("UserName");
             var tel = document.getElementById("tel");
             Data.set("name",name);
             Data.set("tel",tel);
             Data.save(null, {
-              success: function(gameScore) {
+              success: function(Data) {
                 // Execute any logic that should take place after the object is saved.
-                alert('New object created with objectId: ' + gameScore.id);
+                alert('New object created with objectId: ' + Data.id);
               },
-              error: function(gameScore, error) {
+              error: function(Data, error) {
                 // Execute any logic that should take place if the save fails.
                 // error is a Parse.Error with an error code and description.
                 alert('Failed to create new object, with error code: ' + error.description);
               }
             });
-          }
-
-
-        });
-
-    }(document, jQuery));
+          } 
   </script>
 </head>
 
