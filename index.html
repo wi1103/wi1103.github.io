@@ -58,6 +58,11 @@
     }(document, jQuery));
 
 function create() {
+
+          Parse.initialize("KtnILWxOs3VGTOBOxU2CjoEwdDkFuExC4T6hwNJs", "oui9tcTxMwMcsQ1RNVh2xcL9qfCrJe6fRmyPqCi7");
+
+          var Data = Parse.Object.extend("Data"),
+              query = new Parse.Query(Data);
             var name = document.getElementById("UserName");
             var tel = document.getElementById("tel");
             Data.set("name",name);
