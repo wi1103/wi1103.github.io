@@ -21,23 +21,42 @@
 
           Parse.initialize("KtnILWxOs3VGTOBOxU2CjoEwdDkFuExC4T6hwNJs", "oui9tcTxMwMcsQ1RNVh2xcL9qfCrJe6fRmyPqCi7");
 
-
           var Data = Parse.Object.extend("Data"),
-      query = new Parse.Query(Data);
-    query.equalTo("name", "孫小美");
-    query.find({
-      success: function (results) {
-        console.log("Successfully retrieved " + results.length + " scores.");
-        // Do something with the returned Parse.Object values
-        for (var i = 0; i < results.length; i++) {
-          var object = results[i];
-          console.log(object.id + ' - ' + object.get('name'));
-        }
-      },
-      error: function (error) {
-        alert("Error: " + error.code + " " + error.message);
-      }
-    });
+              query = new Parse.Query(Data);
+
+          query.equalTo("name", "孫小美");
+          query.find({
+            success: function (results) {
+              console.log("Successfully retrieved " + results.length + " scores.");
+               // Do something with the returned Parse.Object values
+              for (var i = 0; i < results.length; i++) {
+                    var object = results[i];
+                console.log(object.id + ' - ' + object.get('name'));
+              }
+            },
+            error: function (error) {
+              alert("Error: " + error.code + " " + error.message);
+            }
+          });
+
+          function create() {
+            var name = document.getElementById("UserName");
+            var tel = document.getElementById("tel");
+            Data.set("name",name);
+            Data.set("tel",tel);
+            Data.save(null, {
+              success: function(gameScore) {
+                // Execute any logic that should take place after the object is saved.
+                alert('New object created with objectId: ' + gameScore.id);
+              },
+              error: function(gameScore, error) {
+                // Execute any logic that should take place if the save fails.
+                // error is a Parse.Error with an error code and description.
+                alert('Failed to create new object, with error code: ' + error.description);
+              }
+            });
+          }
+
 
         });
       });
@@ -63,6 +82,14 @@
   <div id="home" data-role="page">
     <div role="main" class="ui-content"></div>
   </div>
+  <div>
+      <form action="test.php" method="post">
+        姓名：<input type="text" name="UserName"><br>
+        電話：<input type="text" name="tel"><br>
+　       <input type="submit" value="Create" onclick="create()">
+      </form>
+  </div>
+
 </body>
 
 </html>
