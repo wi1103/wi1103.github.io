@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>EZoApp</title>
+  <title>Parse test</title>
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
   <link rel="stylesheet" href="//ezoui.com/css/normalize.css">
@@ -22,13 +22,22 @@
           Parse.initialize("KtnILWxOs3VGTOBOxU2CjoEwdDkFuExC4T6hwNJs", "oui9tcTxMwMcsQ1RNVh2xcL9qfCrJe6fRmyPqCi7");
 
 
-          var TestObject = Parse.Object.extend("TestObject");
-          var testObject = new TestObject();
-          testObject.save({
-            foo: "bar"
-          }).then(function (object) {
-            alert("yay! it worked");
-          });
+          var Data = Parse.Object.extend("Data"),
+      query = new Parse.Query(Data);
+    query.equalTo("name", "孫小美");
+    query.find({
+      success: function (results) {
+        console.log("Successfully retrieved " + results.length + " scores.");
+        // Do something with the returned Parse.Object values
+        for (var i = 0; i < results.length; i++) {
+          var object = results[i];
+          console.log(object.id + ' - ' + object.get('name'));
+        }
+      },
+      error: function (error) {
+        alert("Error: " + error.code + " " + error.message);
+      }
+    });
 
         });
       });
