@@ -61,18 +61,18 @@ function create() {
 
           Parse.initialize("KtnILWxOs3VGTOBOxU2CjoEwdDkFuExC4T6hwNJs", "oui9tcTxMwMcsQ1RNVh2xcL9qfCrJe6fRmyPqCi7");
 
-          var Data = Parse.Object.extend("Data"),
-              query = new Parse.Query(Data);
+          var Data = Parse.Object.extend("Data");
+            var data = new Data();
             var name = document.getElementById("UserName");
             var tel = document.getElementById("tel");
-            Data.set("name",name);
-            Data.set("tel",tel);
-            Data.save(null, {
-              success: function(Data) {
+            data.set("name",name);
+            data.set("tel",tel);
+            data.save(null, {
+              success: function(data) {
                 // Execute any logic that should take place after the object is saved.
-                alert('New object created with objectId: ' + Data.id);
+                alert('New object created with objectId: ' + data.id);
               },
-              error: function(Data, error) {
+              error: function(data, error) {
                 // Execute any logic that should take place if the save fails.
                 // error is a Parse.Error with an error code and description.
                 alert('Failed to create new object, with error code: ' + error.description);
