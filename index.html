@@ -1,40 +1,59 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-    $("button").click(function(){
-        $("#div1").html('<img src="http://a0.att.hudong.com/61/36/01200000194917136323362702423.jpg">');
-    });
-});
-</script>
-</head>
-<body>
-
-<div id="div1"></div>
-
-<button>Pikachu</button>
-
-</body>
-</html> -->
 <!DOCTYPE html>
 <html>
+
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-    $("button").click(function(){
-        $("#div1").load("http://a0.att.hudong.com/61/36/01200000194917136323362702423.jpg");
-    });
-});
-</script>
+  <meta charset="utf-8">
+  <title>EZoApp</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <link rel="stylesheet" href="//ezoui.com/css/normalize.css">
+  <link rel="stylesheet" href="//ezoui.com/gk/lib/jquery.mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <!-- Uncomment the following to include cordova in your app project -->
+  <!-- <script src="//ezoui.com/platforms/android_or_ios/cordova.js"></script> -->
+  <!-- Export JS  -->
+  <script>
+    (function (document, $) {
+
+      $(document).on('pageinit', '#home', function () {
+        loadJS('http://www.parsecdn.com/js/parse-1.3.0.min.js', function () {
+
+          Parse.initialize("KtnILWxOs3VGTOBOxU2CjoEwdDkFuExC4T6hwNJs", "oui9tcTxMwMcsQ1RNVh2xcL9qfCrJe6fRmyPqCi7");
+
+
+          var TestObject = Parse.Object.extend("TestObject");
+          var testObject = new TestObject();
+          testObject.save({
+            foo: "bar"
+          }).then(function (object) {
+            alert("yay! it worked");
+          });
+
+        });
+      });
+
+      function loadJS(src, callback) {
+        var head = document.getElementsByTagName("head")[0],
+          script = document.createElement('script');
+        script.src = src;
+        script.onload = callback;
+        script.onerror = function (e) {
+          alert("failed: " + JSON.stringify(e));
+        };
+        head.appendChild(script);
+        head.removeChild(script);
+      }
+
+    }(document, jQuery));
+  </script>
 </head>
+
 <body>
-
-<div id="div1"></div>
-
-<button>Pikachu</button>
-
+  <!-- Page: home  -->
+  <div id="home" data-role="page">
+    <div role="main" class="ui-content"></div>
+  </div>
 </body>
+
 </html>
