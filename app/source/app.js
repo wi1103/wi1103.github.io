@@ -37,6 +37,15 @@ app.config(function ($locationProvider, $mdThemingProvider, $mdIconProvider, $ro
 					controller: listController
 				}
 			},
+		})
+		.state('wspms.photo', {
+			url: "/photo",
+			views: {
+				'content': {
+					templateUrl: "./app/view/photo.html",
+					controller: photoController
+				}
+			},
 		});
 });
 app.run(function ($rootScope, $state) {
@@ -50,32 +59,6 @@ app.run(function ($rootScope, $state) {
 		function (event, toState, toParams, fromState, fromParams) {
 			if (!$rootScope.isLogin)
 				$state.go('wspms.home');
-			// switch (toState.name) {
-			// case 'service.list':
-			// 	$rootScope.title = "智慧服務";
-			// 	$rootScope.actions = [{
-			// 		"name": "新增",
-			// 		"link": "service.new"
-			//               }];
-			// 	break;
-			// case 'service.new':
-			// 	$rootScope.title = "智慧服務新增";
-			// 	$rootScope.actions = [{
-			// 		"name": "建立",
-			// 		"link": "service.edit"
-			//               }];
-			// 	break;
-			// case 'service.edit':
-			// 	$rootScope.title = "智慧服務編輯";
-			// 	$rootScope.actions = [{
-			// 		"name": "刪除",
-			// 		"link": "service.edit"
-			//               }, {
-			// 		"name": "儲存",
-			// 		"link": "service.edit"
-			//               }];
-			// 	break;
-			// }
 		});
 });
 app.controller('HeaderController', headerController);
