@@ -16,5 +16,5 @@
 # sftp configuration file
 sftp-config.json
 
-app/bower_components
+
 node_modules
