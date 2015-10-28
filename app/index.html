@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="wspms">
+
+<head>
+  <title>wspms</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+  <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css" />
+  <link rel="stylesheet" href="assets/app.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="./bower_components/semantic/dist/semantic.min.css">
+  <link rel="stylesheet" href="./bower_components/semantic-ui-accordion/accordion.min.css">
+  <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="./bower_components/semantic/dist/semantic.min.js"></script>
+  <script type="text/javascript" src="./bower_components/semantic-ui-accordion/accordion.min.js"></script>
+  <style type="text/css">
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-nfg-cloak],
+    .ng-cloak,
+    .x-ng-cloak {
+      display: none !important;
+    }
+  </style>
+
+  <script src="./bower_components/angular/angular.js"></script>
+  <script src="./bower_components/angular-animate/angular-animate.js"></script>
+  <script src="./bower_components/angular-aria/angular-aria.js"></script>
+  <script src="./bower_components/angular-route/angular-route.js"></script>
+  <script src="./bower_components/angular-material/angular-material.js"></script>
+  <script src="./bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="./source/controller.js" charset="utf-8"></script>
+  <script src="./source/app.js"></script>
+  <base href="/app">
+</head>
+
+<body ng-cloak layout="column">
+  <md-toolbar layout="row" layout-padding layout-align="space-around center" ng-controller="HeaderController">
+    <h2 id="home" flex="70" ui-sref="wspms.home">WSPMS console</h2>
+    <div flex="30" layout="row" layout-align="space-around center">
+      <h3>{{account.name}}</h3>
+      <md-button style="padding:0;" class="md-primary md-raised" ng-show="isLogin" ng-click="logout()">
+        <i style="height:100%;width:100%;" class="fa fa-sign-out"> sign out</i>
+      </md-button>
+      <md-button ng-show="!isLogin" ng-click="login($event)">
+        <i style="height:100%;width:100%;" class="fa fa-sign-in"> sign in</i>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-content flex id="content" ui-view layout="column" ng-show="isLogin"></md-content>
+</body>
+
+</html>

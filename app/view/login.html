@@ -1,0 +1,16 @@
+<md-dialog ng-cloak>
+  <md-dialog-content class="login" flex layout-padding layout-fill>
+    <div class="md-dialog-content" layout="column" layout-align="center center">
+      <h1>WSPMS</h1>
+      <md-input-container>
+        account<input type="text" ng-model="user.account" height="50">
+      </md-input-container>
+
+      <md-input-container>
+        password
+        <input type="{{showpassword ? 'text' : 'password'}}" ng-model="user.password" height="48">
+      </md-input-container>
+      <md-button class="md-raised md-primary" ng-click="answer()">登入</md-button>
+    </div>
+  </md-dialog-content>
+</md-dialog>

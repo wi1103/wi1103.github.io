@@ -1,0 +1,33 @@
+<span layout="row" flex="10" layout-fill layout-align="end center">
+  <div ng-show="account.admin" ng-click="addUser($event)">
+    <i class='fa fa-user-plus'>新增使用者</i>
+  </div>
+</span>
+<table class="ui celled striped table">
+  <thead>
+    <tr><th>
+      <div class="ui ribbon label">
+        account
+      </div>
+    </th>
+    <th>
+      <div class="ui ribbon label">
+        role
+      </div>
+    </th>
+    <th>
+      <div class="ui ribbon label">
+        create time
+      </div>
+    </th>
+  </tr></thead>
+  <tbody>
+    <tr ng-repeat="account in accounts">
+      <td>
+        {{account.name}}
+      </td>
+      <td>{{account.role}}</td>
+      <td class="right aligned">{{account.time}}</td>
+    </tr>
+  </tbody>
+</table>
