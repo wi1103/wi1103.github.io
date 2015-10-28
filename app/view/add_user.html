@@ -1,21 +1,21 @@
 <md-dialog ng-cloak>
   <md-dialog-content class="create" flex layout-padding layout-fill>
     <div class="md-dialog-content" layout="column" layout-align="center center">
-      <h1>account create</h1>
+      <h1>bookmark create</h1>
       <md-input-container>
-        account
+        name
         <input ng-model="user.account">
       </md-input-container>
 
       <md-input-container>
-        password
-        <input type="{{showpassword ? 'text' : 'password'}}" ng-model="user.password">
+        url
+        <input ng-model="user.password">
       </md-input-container>
       <md-button class="md-raised md-primary" ng-click="create()">create</md-button>
     </div>
     <div class="" ng-show="fail">
       <p>
-        account create fail.
+        create fail.
       </p>
       <p>
         fail message: {{message}}

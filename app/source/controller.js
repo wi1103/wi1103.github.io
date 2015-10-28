@@ -19,13 +19,13 @@ function listController($scope, $mdDialog, $timeout) {
 	var roles = ["admin", "JT RD"];
 	$scope.accounts = [
 		{
-			"name": "admin",
-			"role": roles[0],
+			"name": "data converter",
+			"role": "https://shancarter.github.io/mr-data-converter/",
 			"time": new Date().toDateString()
     },
 		{
-			"name": "eric@gmail.com",
-			"role": roles[1],
+			"name": "github",
+			"role": "https://github.com/",
 			"time": new Date().toDateString()
     }
   ];
