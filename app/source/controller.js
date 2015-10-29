@@ -47,16 +47,55 @@ function createController($scope) {
 }
 
 function listController($scope, $mdDialog, $timeout) {
-	var roles = ["admin", "JT RD"];
 	$scope.accounts = [
 		{
-			"name": "data converter",
+			"name": "Data Converter",
 			"role": "https://shancarter.github.io/mr-data-converter/",
 			"time": new Date().toDateString()
     },
 		{
-			"name": "github",
+			"name": "Github",
 			"role": "https://github.com/",
+			"time": new Date().toDateString()
+    },
+		{
+			"name": "OpenCV",
+			"role": "http://opencv.org/",
+			"time": new Date().toDateString()
+    },
+		{
+			"name": "Qt",
+			"role": "http://www.qt.io/developers/",
+			"time": new Date().toDateString()
+    },
+		{
+			"name": "AngularJS - Semantic UI",
+			"role": "http://semantic-ui.com/introduction/integrations.html",
+			"time": new Date().toDateString()
+    },
+		{
+			"name": "Bitbucket",
+			"role": "https://bitbucket.org/",
+			"time": new Date().toDateString()
+    },
+		{
+			"name": "NTUT - Portal",
+			"role": "https://nportal.ntut.edu.tw/index.do?thetime=1441697866823",
+			"time": new Date().toDateString()
+    },
+		{
+			"name": "Trello",
+			"role": "https://trello.com/",
+			"time": new Date().toDateString()
+    },
+		{
+			"name": "ejs - template",
+			"role": "https://scotch.io/tutorials/use-ejs-to-template-your-node-application",
+			"time": new Date().toDateString()
+    },
+		{
+			"name": "MongoDB",
+			"role": "https://www.mongodb.org/",
 			"time": new Date().toDateString()
     }
   ];
