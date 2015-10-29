@@ -18,7 +18,7 @@
   <script src="./bower_components/jquery/dist/jquery.min.js"></script>
   <script src="./bower_components/semantic/dist/semantic.min.js"></script>
   <script type="text/javascript" src="./bower_components/semantic-ui-accordion/accordion.min.js"></script>
-  <link rel="stylesheet" href="assets/cssgram.min.css">
+  <link rel="stylesheet" href="./assets/cssgram.min.css">
   <style type="text/css">
     [ng\:cloak],
     [ng-cloak],
@@ -43,7 +43,7 @@
 
 <body ng-cloak layout="column">
   <md-toolbar layout="row" layout-padding layout-align="space-around center" ng-controller="HeaderController">
-    <h2 id="home" flex="70" ui-sref="wspms.home">YuJhen</h2>
+    <h2 id="home" style="color:pink"flex="70" ui-sref="wspms.home">YuJhen</h2>
     <div flex="30" layout="row" layout-align="space-around center">
       <h3>{{account.name}}</h3>
       <md-button style="padding:0;" class="md-primary md-raised" ng-show="isLogin" ng-click="logout()">
