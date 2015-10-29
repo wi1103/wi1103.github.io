@@ -1,0 +1,13 @@
+<md-dialog ng-cloak style="width:90vw;height:95vh;background-color:rgba(255,255,255,0.3);">
+  <md-dialog-content class="filter" flex layout-padding>
+    <div class="md-dialog-content" layout="column" flex layout-align="center center">
+      <h1 style="color:white;"flex>濾鏡</h1>
+      <div class="ui grid" layout="row" ng-cloak>
+        <figure style=" padding:0;"class="{{filter}} four wide column" ng-repeat="filter in filters">
+          <img style="width:100%;" src="/app/image/1.JPG">
+        </figure>
+      </div>
+
+    </div>
+  </md-dialog-content>
+</md-dialog>

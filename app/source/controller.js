@@ -3,22 +3,42 @@
 function homeController() {
 
 }
-function photoController() {
-
+function filterController($scope){
+	$scope.filters = ["aden","reyes","perpetua","inkwell","toaster","walden"];
 }
+function photoController($scope, $mdDialog, $timeout) {
+	$scope.filter = function (ev) {
+		console.log('create');
+		$mdDialog.show({
+				controller: filterController,
+				templateUrl: 'app/view/filter.html',
+				parent: angular.element(document.body),
+				targetEvent: ev,
+				clickOutsideToClose: true
+			})
+			.then(function (answer) {
+				$scope.status = 'You said the information was "' + answer + '".';
+			}, function () {
+				$scope.status = 'You cancelled the dialog.';
+			});
+	};
+}
+
 function diaryController() {
 
 }
+
 function todoController() {
 
 }
+
 function createController($scope) {
 	$scope.user = {
 		"account": "",
 		"password": ""
 	};
 	$scope.message = "= =";
-	$scope.create = function(){
+	$scope.create = function () {
 
 	};
 }
@@ -103,8 +123,8 @@ function headerController($state, $scope, $rootScope, $mdSidenav, $mdBottomSheet
 			$state.go('wspms.home');
 		console.log('logout');
 		$rootScope.account = {
-			"admin":false,
-			"name":""
+			"admin": false,
+			"name": ""
 		};
 	};
 	$scope.login = function (ev) {
@@ -142,7 +162,7 @@ function loginController($scope, $rootScope, $mdDialog) {
 		$rootScope.isLogin = true;
 		if ($scope.user.account == 'admin')
 			$rootScope.account.admin = true;
-		$rootScope.account.name= $scope.user.account;
+		$rootScope.account.name = $scope.user.account;
 		$mdDialog.hide(answer);
 	};
 }
