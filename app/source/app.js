@@ -55,6 +55,15 @@ app.config(function ($locationProvider, $mdThemingProvider, $mdIconProvider, $ro
 					controller: diaryController
 				}
 			},
+		})
+		.state('wspms.todo', {
+			url: "/todo",
+			views: {
+				'content': {
+					templateUrl: "./app/view/todo.html",
+					controller: todoController
+				}
+			},
 		});
 });
 app.run(function ($rootScope, $state) {

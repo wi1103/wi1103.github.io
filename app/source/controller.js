@@ -9,6 +9,9 @@ function photoController() {
 function diaryController() {
 
 }
+function todoController() {
+
+}
 function createController($scope) {
 	$scope.user = {
 		"account": "",
