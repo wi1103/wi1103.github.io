@@ -3,36 +3,10 @@
 function homeController() {
 
 }
-function photoController($scope, $mdDialog, $timeout) {
-	var roles = ["admin", "JT RD"];
-	$scope.accounts = [
-		{
-			"name": "data converter",
-			"role": "https://shancarter.github.io/mr-data-converter/",
-			"time": new Date().toDateString()
-    },
-		{
-			"name": "github",
-			"role": "https://github.com/",
-			"time": new Date().toDateString()
-    }
-  ];
-	$scope.addUser = function (ev) {
-		console.log('create');
-		$mdDialog.show({
-				controller: createController,
-				templateUrl: 'app/view/add_user.html',
-				parent: angular.element(document.body),
-				targetEvent: ev,
-				clickOutsideToClose: true
-			})
-			.then(function (answer) {
-				$scope.status = 'You said the information was "' + answer + '".';
-			}, function () {
-				$scope.status = 'You cancelled the dialog.';
-			});
-	};
+function photoController() {
 
+}
+function diaryController() {
 
 }
 function createController($scope) {
